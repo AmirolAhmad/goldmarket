@@ -40,6 +40,9 @@ group :development do
   gem 'capistrano-faster-assets', '~> 1.0'
   gem 'rspec'
   gem 'rspec-rails', '~> 3.0'
+  gem 'annotate'
+  gem 'letter_opener'
+  gem 'quiet_assets'
 end
 
 group :development, :test do
