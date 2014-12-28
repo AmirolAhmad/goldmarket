@@ -30,6 +30,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'unicorn'
 
 gem 'rails_config'
+gem 'dalli'
 
 group :development do
 	gem 'capistrano', github: "capistrano/capistrano", require: false
