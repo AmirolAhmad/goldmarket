@@ -36,6 +36,7 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'capistrano-gitflow', git: 'git@github.com:YotpoLtd/capistrano-gitflow.git'
   gem 'capistrano-faster-assets', '~> 1.0'
+  gem 'rspec'
   gem 'rspec-rails', '~> 3.0'
 end
 
