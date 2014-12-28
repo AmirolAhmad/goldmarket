@@ -29,6 +29,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+gem 'rails_config'
+
 group :development do
 	gem 'capistrano', github: "capistrano/capistrano", require: false
   gem 'capistrano-rbenv', github: "capistrano/rbenv", require: false
