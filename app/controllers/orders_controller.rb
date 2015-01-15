@@ -1,4 +1,10 @@
 class OrdersController < ApplicationController
+	before_filter :require_admin, only: [:index]
+
+	def index
+		Order.all
+	end
+
 	def new
 		@order ||= Order.new
 		render
