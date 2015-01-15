@@ -40,6 +40,8 @@ class User < ActiveRecord::Base
 
   validates :username, :uniqueness => { :case_sensitive => false }, format: { with: /\A[-\w.]*\z/ }
 
+  scope :admin, -> { where(admin: true) }
+
   def self.find_first_by_auth_conditions(warden_conditions)
 	  conditions = warden_conditions.dup
 	  if login = conditions.delete(:login)

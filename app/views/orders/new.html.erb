@@ -1,0 +1,42 @@
+<%= form_for @order, :html => {:multipart => true, method: :post} do |f| %>
+
+	<div class="fields">
+		<%= f.label :package_id %><br />
+		<%= f.collection_select :package_id, Package.order(:name), :id, :name, {}, :class => "" %>
+	</div>
+
+	<br />
+
+	<div class="fields">
+		<%= f.label :client_name %><br />
+		<%= f.text_field :client_name %>
+	</div>
+
+	<br />
+
+	<div class="fields">
+		<%= f.label :client_email %><br />
+		<%= f.text_field :client_email %>
+	</div>
+
+	<br />
+
+	<div class="fields">
+		<%= f.label :phone_number %><br />
+		<%= f.text_field :phone_number %>
+	</div>
+
+	<br />
+
+	<div class="fields">
+		<%= f.label :payment_date %><br />
+		<%= f.text_field :payment_date %>
+	</div>
+
+	<br />
+
+	<div class="action">
+		<%= f.submit "Submit Order", :class => "" %>
+	</div>
+
+<% end %>
