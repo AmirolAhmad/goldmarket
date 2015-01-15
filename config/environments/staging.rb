@@ -79,4 +79,6 @@ Rails.application.configure do
 
   # Use a different cache store in staging.
   config.cache_store = :dalli_store
+
+  config.action_mailer.default_url_options = { host: 'staging.goldmarket.my' }
 end

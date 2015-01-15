@@ -79,4 +79,6 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   config.cache_store = :dalli_store, '127.0.0.1'
+
+  config.action_mailer.default_url_options = { host: 'goldmarket.my' }
 end

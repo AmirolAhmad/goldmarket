@@ -31,6 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rails_config'
 gem 'dalli'
+gem 'devise'
 
 group :development do
 	gem 'capistrano', github: "capistrano/capistrano", require: false
