@@ -5,7 +5,7 @@
 		<div class="pakej-detail">
 			<h3>TEMPAHAN GOLD BAR PAMP SUISSE 100G 24K</h3>
 			<div class="row">
-				<% @packages.each do |package| %>
+				<% Package.all.each do |package| %>
 				<div class="col-md-3">
 					<table class="pakej-2">
 						<thead>
@@ -28,6 +28,19 @@
 		<div class="form-order">
 			<h3>Apa lagi yang ditunggu? Tempahlah sekarang!</h3>
 			<%= form_for @order, :html => {:multipart => true, method: :post, class: "form-horizontal"} do |f| %>
+
+				<% if @order.errors.any? %>
+        <div class="alert alert-danger alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <strong><%= pluralize(@order.errors.count, "error") %> prohibited
+            this order from being saved:</strong>
+            <ul>
+              <% @order.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+              <% end %>
+            </ul>
+        </div>
+        <% end %>
 
 				<div class="form-group">
 					<%= f.label :package_id, "Package Name", class: "col-sm-3 control-label" %>

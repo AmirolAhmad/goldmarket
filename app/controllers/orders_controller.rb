@@ -1,8 +1,7 @@
 class OrdersController < ApplicationController
-	before_filter :disable_header, only: [:new]
+	before_filter :disable_header, only: [:new, :create]
 
 	def new
-		@packages = Package.all
 		@order ||= Order.new
 		render
 
