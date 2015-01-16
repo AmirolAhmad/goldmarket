@@ -7,10 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= render partial: "header" unless @disable_header %>
 
-	<p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+	<%= render partial: "header" unless @disable_header %>
+	
+	<% if alert %>
+  	<p class="alert"><%= alert %></p>
+  <% elsif notice %>
+  	<p class="notice"><%= notice %></p>
+  	<% end %>
 
 	<%= yield %>
 

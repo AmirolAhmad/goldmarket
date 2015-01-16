@@ -1,0 +1,141 @@
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+
+  /* Preserve aspet ratio */
+  max-width: 100%;
+
+  z-index: -1;
+}
+
+$bg: rgba(0,0,0,0.6);
+
+.form-order {
+  background-color: lighten($bg, 5%);
+  padding: 20px;
+  border-radius: 6px;
+  margin-top: 15%;
+  margin-right: 10%;
+}
+
+.form-order label {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300; 
+}
+
+.form-order h3 {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  font-weight: 300; 
+  font-size: 30px;
+}
+
+.pakej-detail {
+  margin-left: 10%;
+}
+
+.pakej-detail h3 {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 20%;
+}
+
+.pakej-1 > thead > tr > th {
+  background-color: #3498DB;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 300;
+  padding: 6px 0;
+}
+
+.pakej-1 > tbody > tr > td {
+  background-color: lighten($bg, 2%);
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 300;
+  padding: 0 20px;
+}
+
+.pakej-1 > tbody > tr > td span {
+  font-size: 20px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.pakej-2 > thead > tr > th {
+  background-color: #990000;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 300;
+  padding: 6px 0;
+}
+
+.pakej-2 > tbody > tr > td {
+  background-color: lighten($bg, 2%);
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 300;
+  padding: 0 20px;
+}
+
+.pakej-2 > tbody > tr > td span {
+  font-size: 20px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.pakej-3 > thead > tr > th {
+  background-color: #4b6d37;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 300;
+  padding: 6px 0;
+}
+
+.pakej-3 > tbody > tr > td {
+  background-color: lighten($bg, 2%);
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 300;
+  padding: 0 20px;
+}
+
+.pakej-3 > tbody > tr > td span {
+  font-size: 20px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.pakej-4 > thead > tr > th {
+  background-color: #6d00f9;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 300;
+  padding: 6px 0;
+}
+
+.pakej-4 > tbody > tr > td {
+  background-color: lighten($bg, 2%);
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 300;
+  padding: 0 20px;
+}
+
+.pakej-4 > tbody > tr > td span {
+  font-size: 20px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.form-order .control-label {
+  text-align: left;
+}

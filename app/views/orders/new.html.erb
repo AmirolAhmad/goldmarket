@@ -1,42 +1,114 @@
-<%= form_for @order, :html => {:multipart => true, method: :post} do |f| %>
+<%= image_tag "background-photo.jpg", id: "bg" %>
 
-	<div class="fields">
-		<%= f.label :package_id %><br />
-		<%= f.collection_select :package_id, Package.order(:name), :id, :name, {}, :class => "" %>
+<div class="row">
+	<div class="col-md-6">
+		<div class="pakej-detail">
+			<h3>TEMPAHAN GOLD BAR PAMP SUISSE 100G 24K</h3>
+			<div class="row">
+				<div class="col-md-3">
+					<table class="pakej-1">
+						<thead>
+							<tr>
+								<th>ETA7</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Harga<span>RM12,600</span>Landing<span>2/1/2015</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-3">
+					<table class="pakej-2">
+						<thead>
+							<tr>
+								<th>ETA14</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Harga<span>RM11,800</span>Landing<span>9/1/2015</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-3">
+					<table class="pakej-3">
+						<thead>
+							<tr>
+								<th>ETA21</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Harga<span>RM11,200</span>Landing<span>16/1/2015</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-3">
+					<table class="pakej-4">
+						<thead>
+							<tr>
+								<th>ETA30</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Harga<span>RM10,200</span>Landing<span>26/1/2015</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 	</div>
+	<div class="col-md-6">
+		<div class="form-order">
+			<h3>Apa lagi yang ditunggu? Tempahlah sekarang!</h3>
+			<%= form_for @order, :html => {:multipart => true, method: :post, class: "form-horizontal"} do |f| %>
 
-	<br />
+				<div class="form-group">
+					<%= f.label :package_id, "Package Name", class: "col-sm-3 control-label" %>
+					<div class="col-sm-9">
+						<%= f.collection_select :package_id, Package.order(:name), :id, :name, {}, :class => "form-control input-md" %>
+					</div>
+				</div>
 
-	<div class="fields">
-		<%= f.label :client_name %><br />
-		<%= f.text_field :client_name %>
+				<div class="form-group">
+					<%= f.label :client_name, "Full Name", class: "col-sm-3 control-label" %>
+					<div class="col-sm-9">
+						<%= f.text_field :client_name, class: "form-control input-md" %>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<%= f.label :client_email, "Email Address", class: "col-sm-3 control-label" %>
+					<div class="col-sm-9">
+						<%= f.email_field :client_email, class: "form-control input-md" %>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<%= f.label :phone_number, "Phone Number", class: "col-sm-3 control-label" %>
+					<div class="col-sm-9">
+						<%= f.text_field :phone_number, class: "form-control input-md" %>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<%= f.label :payment_date, "Payment Date", class: "col-sm-3 control-label" %>
+					<div class="col-sm-9">
+						<%= f.text_field :payment_date, class: "form-control input-md" %>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<%= f.submit "Submit Order", :class => "btn btn-embossed btn-info btn-block" %>
+				</div>
+
+			<% end %>
+		</div>
 	</div>
-
-	<br />
-
-	<div class="fields">
-		<%= f.label :client_email %><br />
-		<%= f.text_field :client_email %>
-	</div>
-
-	<br />
-
-	<div class="fields">
-		<%= f.label :phone_number %><br />
-		<%= f.text_field :phone_number %>
-	</div>
-
-	<br />
-
-	<div class="fields">
-		<%= f.label :payment_date %><br />
-		<%= f.text_field :payment_date %>
-	</div>
-
-	<br />
-
-	<div class="action">
-		<%= f.submit "Submit Order", :class => "" %>
-	</div>
-
-<% end %>
+</div>
