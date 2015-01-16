@@ -10,13 +10,13 @@
     <div class="notification-text"><%= Announcement.first.try(:message) %></div>  
 </div>  
 
-<div class="row">
+<div class="row-fluid">
 	<div class="col-md-6">
 		<div class="pakej-detail">
 			<h3>TEMPAHAN GOLD BAR PAMP SUISSE 100G 24K</h3>
 			<div class="row">
 				<% Package.all.each do |package| %>
-				<div class="col-md-3">
+				<div class="col-md-3 col-xs-12 col-sm-6">
 					<table class="pakej-2">
 						<thead>
 							<tr>
@@ -25,7 +25,12 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td>Harga<span>RM<%= package.price %></span>Landing<span><%= package.landing_date %></span></td>
+								<td>
+									<p>Harga</p>
+									<span>RM<%= package.price %></span>
+									<p>Landing</p>
+									<span><%= package.landing_date %></span>
+								</td>
 							</tr>
 						</tbody>
 					</table>
