@@ -81,4 +81,6 @@ Rails.application.configure do
   config.cache_store = :dalli_store, '127.0.0.1'
 
   config.action_mailer.default_url_options = { host: 'goldmarket.my' }
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  config.assets.precompile += %w( .svg .eot .woff .ttf)
 end
