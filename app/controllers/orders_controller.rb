@@ -1,13 +1,11 @@
 class OrdersController < ApplicationController
-	before_filter :require_admin, only: [:index]
-
-	def index
-		Order.all
-	end
+	before_filter :disable_header, only: [:new]
 
 	def new
 		@order ||= Order.new
 		render
+
+		@disable_header = true
 	end
 
 	def create

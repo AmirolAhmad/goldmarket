@@ -11,9 +11,14 @@ Rails.application.routes.draw do
     get '/login' => 'devise/sessions#new'
     get '/register' => 'devise/registrations#new'
   end
-  root 'welcome#index'
+  root 'orders#new'
 
-  resources :orders
+  resources :orders, only: [:new, :create]
+
+  namespace :admin, path: '/master' do
+    get "/" => "orders#index", as: 'master'
+    resources :orders
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

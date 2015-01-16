@@ -1,0 +1,21 @@
+<table class="table table-bordered table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Client Name</th>
+			<th>Client Email</th>
+			<th>Package Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @orders.each do |order| %>
+		<tr>
+			<td><%= order.try(:client_name) %></td>
+			<td><%= order.try(:client_email) %></td>
+			<td><%= order.package.name %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+
+	
