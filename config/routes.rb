@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   namespace :admin, path: '/master' do
     get "/" => "orders#index", as: 'master'
     resources :orders
+    resources :packages, only: [:index, :edit, :update]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

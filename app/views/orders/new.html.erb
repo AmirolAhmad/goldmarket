@@ -5,62 +5,22 @@
 		<div class="pakej-detail">
 			<h3>TEMPAHAN GOLD BAR PAMP SUISSE 100G 24K</h3>
 			<div class="row">
-				<div class="col-md-3">
-					<table class="pakej-1">
-						<thead>
-							<tr>
-								<th>ETA7</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Harga<span>RM12,600</span>Landing<span>2/1/2015</span></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+				<% @packages.each do |package| %>
 				<div class="col-md-3">
 					<table class="pakej-2">
 						<thead>
 							<tr>
-								<th>ETA14</th>
+								<th><%= package.name %></th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Harga<span>RM11,800</span>Landing<span>9/1/2015</span></td>
+								<td>Harga<span>RM<%= package.price %></span>Landing<span><%= package.landing_date %></span></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
-				<div class="col-md-3">
-					<table class="pakej-3">
-						<thead>
-							<tr>
-								<th>ETA21</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Harga<span>RM11,200</span>Landing<span>16/1/2015</span></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="col-md-3">
-					<table class="pakej-4">
-						<thead>
-							<tr>
-								<th>ETA30</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Harga<span>RM10,200</span>Landing<span>26/1/2015</span></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+				<% end %>
 			</div>
 		</div>
 	</div>

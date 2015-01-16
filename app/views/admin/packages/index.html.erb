@@ -1,0 +1,26 @@
+<div class="container">
+
+	<h3>List of Packages</h3>
+
+	<table class="table table-bordered table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Package Name</th>
+			<th>Package Price</th>
+			<th>Landing Date</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @packages.each do |package| %>
+		<tr>
+			<td><%= package.name %></td>
+			<td>RM<%= package.price %></td>
+			<td><%= package.landing_date %></td>
+			<td><%= link_to "Edit", edit_admin_package_path(package), :class => "btn btn-primary btn-xs btn-block" %></td>
+		</tr>
+		<% end %>
+	</tbody>
+	</table>
+
+</div>

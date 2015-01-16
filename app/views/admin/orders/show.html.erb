@@ -1,0 +1,62 @@
+<div class="container">
+
+	<h3><center>Order details by <%= @order.client_name.titleize %></center></h3>
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+
+			<div class="panel panel-primary">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Panel title</h3>
+			  </div>
+			  <div class="panel-body">
+
+			  	<div class="row">
+			  		<div class="col-md-6">
+			  			<div class="form-group">
+								<label>Client Name</label>
+								<p><%= @order.client_name %></p>
+							</div>
+			  		</div>
+			  		<div class="col-md-6">
+			  			<div class="form-group">
+								<label>Client Email</label>
+								<p><%= @order.client_email %></p>
+							</div>
+			  		</div>
+			  	</div>
+
+			  	<div class="row">
+			  		<div class="col-md-6">
+			  			<div class="form-group">
+								<label>Client Phone Number</label>
+								<p><%= @order.phone_number %></p>
+							</div>
+			  		</div>
+			  	</div>
+
+			  	<div class="row">
+			  		<div class="col-md-6">
+			  			<div class="form-group">
+								<label>Package Name</label>
+								<p><%= @order.package.name %></p>
+							</div>
+			  		</div>
+			  		<div class="col-md-6">
+			  			<div class="form-group">
+								<label>Payment Date</label>
+								<p><%= @order.payment_date %></p>
+							</div>
+			  		</div>
+			  	</div>
+
+			  </div>
+			  <div class="panel-footer">
+			  	<%= link_to "Back", :back, :class => "btn btn-primary btn-block" %>
+			  </div>
+			</div>
+
+		</div>
+	</div>
+
+</div>
