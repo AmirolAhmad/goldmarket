@@ -24,5 +24,6 @@ Rails.application.routes.draw do
       end
     end
     resources :packages, only: [:index, :edit, :update, :destroy]
+    resources :announcements
   end
 end

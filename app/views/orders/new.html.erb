@@ -1,5 +1,15 @@
 <%= image_tag "background-photo.jpg", id: "bg" %>
 
+<div class="notification-bar">  
+    <input id="hide" type="radio" name="bar" value="hide">  
+    <input id="show" type="radio" name="bar" value="show" checked="checked">  
+      
+    <label for="hide">hide</label>  
+    <label for="show">show</label>  
+      
+    <div class="notification-text"><%= Announcement.first.try(:message) %></div>  
+</div>  
+
 <div class="row">
 	<div class="col-md-6">
 		<div class="pakej-detail">

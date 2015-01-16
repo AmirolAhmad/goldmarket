@@ -1,0 +1,28 @@
+<div class="container">
+
+	<h3>List of Announcement <%= link_to "New", new_admin_announcement_path, class: "btn btn-xs btn-info" %></h3>
+
+	<table class="table table-bordered table-striped table-hover">
+		<thead>
+			<tr>
+				<th>By</th>
+				<th>Message</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @announcements.each do |announcement| %>
+			<tr>
+				<td><%= announcement.user.username %></td>
+				<td><%= announcement.message %></td>
+				<td>
+					<%= link_to "Edit", edit_admin_announcement_path(announcement), :class => "btn btn-primary btn-xs" %>
+					<%= link_to "Delete", admin_announcement_path(announcement), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-default" %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+</div>
+	

@@ -1,4 +1,5 @@
 class Admin::PackagesController < ApplicationController
+	before_filter :set_package, only: [:edit, :update]
 	before_filter :require_admin
 
 	def index
@@ -6,7 +7,6 @@ class Admin::PackagesController < ApplicationController
 	end
 
 	def edit
-		@package = Package.find(params[:id])
 		if @package
       render
     else
@@ -15,7 +15,6 @@ class Admin::PackagesController < ApplicationController
 	end
 
 	def update
-		@package = Package.find(params[:id])
 		if @package.update(package_params)
       redirect_to admin_packages_path, notice: "Package has been updated."
     else
@@ -24,6 +23,10 @@ class Admin::PackagesController < ApplicationController
 	end
 
 	private
+
+	def set_package
+		@package = Package.find(params[:id])
+	end
 
 	def package_params
   	params.require(:package).permit(:id, :name, :price, :landing_date)
