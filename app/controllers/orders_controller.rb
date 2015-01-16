@@ -11,6 +11,9 @@ class OrdersController < ApplicationController
 	def create
 		@order = Order.new(order_params)
   	if @order.save
+  		OrderMailer.order_email(@order).deliver
+  		OrderMailer.notify_admin(@order).deliver
+  		
   		redirect_to root_path, notice: "Order has been submit"
   	else
   		render 'new'
