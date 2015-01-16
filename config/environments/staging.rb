@@ -81,6 +81,15 @@ Rails.application.configure do
   config.cache_store = :dalli_store
 
   config.action_mailer.default_url_options = { host: 'staging.goldmarket.my' }
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.mandrillapp.com',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => '<%= ENV["MANDRILL_USERNAME"] %>',
+    :password       => '<%= ENV["MANDRILL_PASSWORD"] %>',
+    :domain         => 'staging.goldmarket.my',
+    :enable_starttls_auto => true
+  }
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   config.assets.precompile += %w( .svg .eot .woff .ttf)
 end
