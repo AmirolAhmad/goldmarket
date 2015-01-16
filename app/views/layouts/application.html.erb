@@ -11,10 +11,20 @@
 	<%= render partial: "header" unless @disable_header %>
 	
 	<% if alert %>
-  	<p class="alert"><%= alert %></p>
+  <div class="container">
+  	<div class="alert alert-danger">
+      <button class="close fui-cross" data-dismiss="alert"></button>
+      <p><%= alert %></p>
+    </div>
+  </div>
   <% elsif notice %>
-  	<p class="notice"><%= notice %></p>
-  	<% end %>
+  <div class="container">
+  	<div class="alert alert-success">
+      <button class="close fui-cross" data-dismiss="alert"></button>
+      <p><%= notice %></p>
+    </div>
+  </div>
+	<% end %>
 
 	<%= yield %>
 

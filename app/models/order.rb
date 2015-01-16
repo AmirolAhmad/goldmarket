@@ -18,4 +18,6 @@
 
 class Order < ActiveRecord::Base
   belongs_to :package
+
+  default_scope -> { order('orders.id DESC') }
 end

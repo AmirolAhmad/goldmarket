@@ -12,4 +12,6 @@
 
 class Package < ActiveRecord::Base
 	has_many :orders
+
+	default_scope -> { order('packages.id ASC') }
 end
