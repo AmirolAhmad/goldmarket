@@ -8,6 +8,7 @@
 				<th>Client Name</th>
 				<th>Client Email</th>
 				<th>Package Name</th>
+				<th>Status</th>
 				<th>Actions</th>
 			</tr>
 		</thead>
@@ -17,7 +18,16 @@
 				<td><%= order.try(:client_name) %></td>
 				<td><%= order.try(:client_email) %></td>
 				<td><%= order.package.name %></td>
-				<td><%= link_to "Show", admin_order_path(order), :class => "btn btn-primary btn-xs" %></td>
+				<td><%= order.status %></td>
+				<td>
+					<%= link_to "Show", admin_order_path(order), :class => "btn btn-primary btn-xs" %>
+					<%= link_to "Delete", admin_order_path(order), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-default" %>
+					<% if order.is_pending? %>
+            <%= link_to 'Mark as complete', complete_admin_order_path(order), method: :patch, class: "btn btn-xs btn-info" %>
+          <% else %>  
+            <%= link_to 'Mark as pending', pending_admin_order_path(order), method: :patch, class: "btn btn-xs btn-danger" %>
+          <% end %>
+				</td>
 			</tr>
 			<% end %>
 		</tbody>
