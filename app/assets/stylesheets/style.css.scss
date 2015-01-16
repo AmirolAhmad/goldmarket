@@ -6,6 +6,55 @@
   z-index: -1;
 }
 
+$bg: rgba(0,0,0,0.6);
+
+.form-header {
+  background-color: #e5e9ea;
+  border-radius: 6px 6px 0 0;
+  border: 1px solid #e7e7e7;
+  padding: 5px;
+}
+
+.login-form {
+  // background-color: #ecf0f1;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 0 0 6px 6px;
+  border: 1px solid #e7e7e7;
+}
+
+.input-washio {
+  border: 0;
+  border-bottom: 1px #999999 dotted;
+  border-radius: 0;
+  box-shadow: inset 0 0 0;
+  padding: 6px 0;
+}
+
+.input-washio:focus {
+  border-color: 0;
+  box-shadow: inset 0 0 0;
+}
+
+input .input-washio {
+  border: 0;
+}
+
+.sessions.new,
+.registrations.new,
+.confirmations.new,
+.passwords.new {
+  background-color: #2F2D2E;
+}
+
+.col-login-form {
+  margin-top: 80px;
+}
+
+.navbar {
+  border-radius: 0;
+}
+
 @media all and (max-width: 900px) {
   #bg {
     height: 100%;
@@ -33,8 +82,6 @@
   }
 }
 
-$bg: rgba(0,0,0,0.6);
-
 .form-order {
   background-color: lighten($bg, 5%);
   padding: 20px;
@@ -60,6 +107,7 @@ $bg: rgba(0,0,0,0.6);
 
 .pakej-detail {
   margin-left: 10%;
+  padding-top: 18%;
 }
 
 .pakej-detail h3 {
