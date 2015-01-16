@@ -73,7 +73,12 @@
 				<div class="form-group">
 					<%= f.label :payment_date, "Payment Date", class: "col-sm-3 control-label" %>
 					<div class="col-sm-9">
-						<%= f.text_field :payment_date, class: "form-control input-md" %>
+						<div class="input-group">
+					    <span class="input-group-btn">
+					      <button class="btn" type="button"><span class="fui-calendar"></span></button>
+					    </span>
+					    <%= f.text_field :payment_date, class: "form-control input-md", id: "payment_date" %>
+					  </div>
 					</div>
 				</div>
 
